@@ -138,5 +138,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1068801879598534420, guid: 7ed225cb93f50a7408fc5a777b849a82,
     type: 3}
-  bulletOffset: {x: 0, y: 0.5, z: 0}
-  fireDelay: 0.25
