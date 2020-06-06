@@ -45,3 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pools:
   - {fileID: 11400000, guid: 7a938a958f90b4a4981cd19247cd4635, type: 2}
+  - {fileID: 11400000, guid: 0e83bdf3871b66441b16a2c76fca57d4, type: 2}

@@ -48,6 +48,10 @@ public class PoolingManager : MonoBehaviour
         poolDictionary[tag].Enqueue(objectToSpawn);
         return objectToSpawn;
     }
+    public GameObject SpawnFromPool(string tag)
+    {
+        return SpawnFromPool(tag, Vector3.zero, Quaternion.identity);
+    }
     private void Update()
     {
         
