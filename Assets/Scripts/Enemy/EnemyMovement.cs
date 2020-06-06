@@ -3,11 +3,9 @@
 public class EnemyMovement : MonoBehaviour
 {
 
-#pragma warning disable 0649
     [SerializeField]
-    private FloatVariable movementSpeed;
-    private Transform targetToFollow;
-#pragma warning restore 0649
+    private FloatVariable movementSpeed = null;
+    private Transform targetToFollow = null;
     private void Start()
     {
         targetToFollow = FindObjectOfType<PlayerMovemement>().gameObject.transform;

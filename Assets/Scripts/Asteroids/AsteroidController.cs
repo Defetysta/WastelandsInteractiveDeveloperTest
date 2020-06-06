@@ -4,25 +4,27 @@ using UnityEngine;
 public class AsteroidController : MonoBehaviour
 {
     private SpriteRenderer rend;
-#pragma warning disable 0649
     [SerializeField]
-    private Sprite[] asteroidSprites;
-#pragma warning restore 0649
+    private Sprite[] asteroidSprites = null;
+    [SerializeField]
+    private GameEventRaiser destroyPlayer = null;
     private Camera cam;
-    private AsteroidExplosionsController explosionsController;
+    internal ExplosionsController explosionsController;
     private Rigidbody2D rb;
     private Collider2D coll;
     private void Awake()
     {
+        
         rb = GetComponent<Rigidbody2D>();
         rend = GetComponent<SpriteRenderer>();
-        explosionsController = GetComponentInChildren<AsteroidExplosionsController>();
+        explosionsController = GetComponentInChildren<ExplosionsController>();
         cam = FindObjectOfType<CameraShake>().GetComponent<Camera>();
         coll = GetComponent<Collider2D>();
     }
 
     private void OnEnable()
     {
+        //destroyPlayer = GetComponent<GameEventRaiser>();
         AsteroidsManager.enabledAsteroidsCount++;
         coll.enabled = true;
         rend.sprite = asteroidSprites[0];
@@ -32,8 +34,8 @@ public class AsteroidController : MonoBehaviour
 
     private void DetermineInitialProperties()
     {
-        bool randX = Random.Range(0f, 1f) > 0.5f ? true : false;
-        bool flipStartingSide = Random.Range(0f, 1f) > 0.5f ? true : false;
+        bool randX = Coinflip();
+        bool flipStartingSide = Coinflip();
         float x = cam.orthographicSize * 2.2f;
         float y = cam.orthographicSize * cam.aspect;
         if (flipStartingSide)
@@ -47,6 +49,11 @@ public class AsteroidController : MonoBehaviour
         var desiredPos = (randX == true) ? new Vector2(Random.Range(-x, x), -y) : new Vector2(-x, Random.Range(-y, y));
         transform.position = startingPos;
         rb.velocity = (desiredPos - startingPos).normalized * Random.Range(CONST_VALUES.ASTEROID_MIN_SPEED, CONST_VALUES.ASTEROID_MAX_SPEED);
+    }
+
+    private static bool Coinflip()
+    {
+        return Random.Range(0f, 1f) > 0.5f ? true : false;
     }
 
     private void OnDisable()
@@ -63,6 +70,7 @@ public class AsteroidController : MonoBehaviour
         if (collision.CompareTag(CONST_VALUES.PLAYER_TAG))
         {
             StartCoroutine(StartChangingSprites());
+            destroyPlayer.RaiseEvent();
         }
         if (collision.CompareTag(CONST_VALUES.BULLET_TAG))
         {

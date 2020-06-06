@@ -2,8 +2,11 @@
 
 public class AsteroidsManager : MonoBehaviour
 {
-    public int desiredActiveAsteroids = 15;
-    public static int enabledAsteroidsCount = 0;
+    [SerializeField]
+    private int desiredActiveAsteroids = 15;
+    internal static int enabledAsteroidsCount = 0;
+    private float timer = 0f;
+    private float interval = 0.2f;
     private PoolingManager poolingManager;
 
     private void Awake()
@@ -12,9 +15,16 @@ public class AsteroidsManager : MonoBehaviour
     }
     private void Update()
     {
-        if (desiredActiveAsteroids > enabledAsteroidsCount)
+        timer += Time.deltaTime;
+        if (desiredActiveAsteroids > enabledAsteroidsCount && timer >= interval)
         {
+            timer = 0f;
             poolingManager.SpawnFromPool("Asteroids");
         }
+    }
+
+    public void DisableSpawningAsteroids()
+    {
+        desiredActiveAsteroids = 0;
     }
 }

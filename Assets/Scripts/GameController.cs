@@ -1,14 +1,20 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    private void Start()
+    public void OnPlayerDeath()
     {
-        
+        StartCoroutine(DelayEndGame());
     }
 
-    private void Update()
+    private IEnumerator DelayEndGame()
     {
-        
+        foreach (var item in FindObjectsOfType<AsteroidController>())
+        {
+            item.explosionsController.SetOffExplosions();
+        }
+        yield return new WaitForSeconds(1f);
+        SceneLoader.Instance.LoadGameOver();
     }
 }

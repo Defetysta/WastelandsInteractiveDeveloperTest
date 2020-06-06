@@ -1,13 +1,11 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class AsteroidExplosionsController : MonoBehaviour
+public class ExplosionsController : MonoBehaviour
 {
 
-#pragma warning disable 0649
     [SerializeField]
-    private Sprite[] explosions;
-#pragma warning restore 0649
+    private Sprite[] explosions = null;
     private SpriteRenderer rend;
     private void Awake()
     {
@@ -17,7 +15,7 @@ public class AsteroidExplosionsController : MonoBehaviour
     {
         rend.sprite = null;
     }
-    internal void SetOffExplosions()
+    public void SetOffExplosions()
     {
         StartCoroutine(SequenceExplosions());
     }
