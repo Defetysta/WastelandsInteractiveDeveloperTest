@@ -10,12 +10,17 @@ public class SceneLoader : MonoBehaviour
         if (Instance == null)
             Instance = this;
     }
+    private void OnEnable()
+    {
+        Debug.Log("Loaded");
+    }
 
     public void LoadNextLevel()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         if (currentSceneIndex >= SceneManager.sceneCountInBuildSettings - 2)
             currentSceneIndex = 0;
+
 
         SceneManager.LoadScene(currentSceneIndex + 1);
 
