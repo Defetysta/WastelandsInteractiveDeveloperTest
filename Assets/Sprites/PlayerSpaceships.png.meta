@@ -1,7 +1,8 @@
 fileFormatVersion: 2
-guid: 9cc4c35cdc71a704baff25b0b2cb5f51
+guid: fbe039181c909284981f218cd0ae99d0
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: oie_transparent_v2_0
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -31,7 +32,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,7 +41,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,11 +72,31 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: oie_transparent_v2_0
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 2
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0.47411388, y: 0.5137046}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ebb496243b1ef84c9881c024eba3cab
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 24d2f0a4a23546d4589a9eed8caf0c52
+    spriteID: 16e1bfb0b9b971642837c4ec623d33b5
     vertices: []
     indices: 
     edges: []
