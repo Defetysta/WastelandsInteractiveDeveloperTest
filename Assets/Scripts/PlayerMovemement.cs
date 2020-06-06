@@ -6,7 +6,7 @@ public class PlayerMovemement : MonoBehaviour
     private string vertAxis = "Vertical";
     private float currentRotationZ;
     private Quaternion currentRotation;
-    private Vector3 currentPosition;
+    private Vector3 desiredPosition;
     private Vector3 desiredVelocity;
 
     private void Start()
@@ -22,10 +22,10 @@ public class PlayerMovemement : MonoBehaviour
 
     private void MovePlayer()
     {
-        currentPosition = transform.position;
+        desiredPosition = transform.position;
         desiredVelocity = new Vector3(0, Input.GetAxis(vertAxis) * CONST_VALUES.MAX_VELOCITY_FORWARD * Time.deltaTime, 0);
-        currentPosition += currentRotation * desiredVelocity;
-        transform.position = currentPosition;
+        desiredPosition += currentRotation * desiredVelocity;
+        transform.position = desiredPosition;
     }
 
     private void RotatePlayer()
