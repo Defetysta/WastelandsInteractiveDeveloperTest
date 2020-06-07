@@ -2,13 +2,17 @@
 
 public class EnemyMovement : MonoBehaviour
 {
-
     [SerializeField]
     private FloatVariable movementSpeed = null;
     private Transform targetToFollow = null;
+    private Rigidbody2D rb;
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     private void Start()
     {
-        targetToFollow = FindObjectOfType<PlayerMovemement>().gameObject.transform;
+        rb.velocity = transform.forward * CONST_VALUES.ENEMY_SPEED_MULTIPLIER;
     }
 
     private void Update()

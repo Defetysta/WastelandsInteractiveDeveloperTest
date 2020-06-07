@@ -4,15 +4,19 @@ using UnityEngine;
 public class CameraShake : MonoBehaviour
 {
     public static CameraShake Instance = null;
+    [SerializeField]
+    private FloatVariable shakeDuration = null;
+    [SerializeField]
+    private FloatVariable shakeMagnitude = null;
 
     private void Awake()
     {
         if (Instance == null)
             Instance = this;
     }
-    public void StartShake(float duration, float magnitude)
+    public void StartShake()
     {
-        StartCoroutine(Shake(duration, magnitude));
+        StartCoroutine(Shake(shakeDuration.Value, shakeMagnitude.Value));
     }
 
     private IEnumerator Shake(float duration, float magnitude)

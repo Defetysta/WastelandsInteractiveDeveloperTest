@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5688246658881669701}
   - component: {fileID: 5688246658881669702}
   - component: {fileID: 6745809563484768217}
+  - component: {fileID: 1354225774}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -96,6 +97,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 781b257916705dc47a13194aa78f7d90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shakeDuration: {fileID: 11400000, guid: 61bd0f9bb137c514da6f4a5ec05ec05b, type: 2}
+  shakeMagnitude: {fileID: 11400000, guid: 0ba7cc81544c68c48b2b49930540f45e, type: 2}
+--- !u!114 &1354225774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5688246658881669703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba959cf5c27775c4c82581118644b4b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 2d14825fcc7633d46b07d5f2f559d99d, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6745809563484768217}
+        m_MethodName: StartShake
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &5688246658962053640
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,4 +12,5 @@
     internal const float FIRING_INTERVAL = 0.1f;
     internal const float ASTEROID_MIN_SPEED = 4f;
     internal const float ASTEROID_MAX_SPEED = 7f;
+    internal const float ENEMY_SPEED_MULTIPLIER = 2f;
 }
