@@ -8,13 +8,18 @@ public class AsteroidController : MonoBehaviour
     private Sprite[] asteroidSprites = null;
     [SerializeField]
     private GameEventRaiser destroyPlayer = null;
-    private Camera cam;
+    [SerializeField]
+    private GameEventRaiser addPoints = null;
+    [SerializeField]
+    private SimpleAudioEvent onAsteroidDestroyed = null;
     internal ExplosionsController explosionsController;
+    private Camera cam;
     private Rigidbody2D rb;
     private Collider2D coll;
+    private AudioSource src;
     private void Awake()
     {
-        
+        src = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         rend = GetComponent<SpriteRenderer>();
         explosionsController = GetComponentInChildren<ExplosionsController>();
@@ -24,7 +29,6 @@ public class AsteroidController : MonoBehaviour
 
     private void OnEnable()
     {
-        //destroyPlayer = GetComponent<GameEventRaiser>();
         AsteroidsManager.enabledAsteroidsCount++;
         coll.enabled = true;
         rend.sprite = asteroidSprites[0];
@@ -70,10 +74,13 @@ public class AsteroidController : MonoBehaviour
         if (collision.CompareTag(CONST_VALUES.PLAYER_TAG))
         {
             StartCoroutine(StartChangingSprites());
+            onAsteroidDestroyed.Play(src);
             destroyPlayer.RaiseEvent();
         }
         if (collision.CompareTag(CONST_VALUES.BULLET_TAG))
         {
+            addPoints.RaiseEvent();
+            onAsteroidDestroyed.Play(src);
             StartCoroutine(StartChangingSprites());
             coll.enabled = false;
         }

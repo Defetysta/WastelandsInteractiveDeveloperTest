@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 8791510022355332710}
   - component: {fileID: 8791510022355332711}
   - component: {fileID: 1417948933}
+  - component: {fileID: 1311280237}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: Bounds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8791510022355332698}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -21.172754, y: 1.8521335, z: 0}
-  m_LocalScale: {x: 14.720008, y: 0.29276013, z: 1}
+  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
+  m_LocalPosition: {x: -10.228, y: 1.8521, z: 0}
+  m_LocalScale: {x: 14.720008, y: 0.15003957, z: 1}
   m_Children: []
   m_Father: {fileID: 8791510022459768077}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!33 &8791510022355332710
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -88,7 +89,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 2.3283064e-10, y: 0}
@@ -104,6 +105,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0000004, y: 1.0000002}
   m_EdgeRadius: 0
+--- !u!114 &1311280237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8791510022355332698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4deabad2478757f438c4a336a226ad75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respectiveBoundary: {fileID: 8791510023339294744}
 --- !u!1 &8791510022459768066
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,9 +164,10 @@ GameObject:
   - component: {fileID: 8791510022834776252}
   - component: {fileID: 8791510022834776253}
   - component: {fileID: 2082998376}
+  - component: {fileID: 55179402}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Bounds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,13 +179,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8791510022834776240}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 1.2772471, y: 9.072134, z: 0}
   m_LocalScale: {x: 45.135784, y: 0.29276, z: 1}
   m_Children: []
   m_Father: {fileID: 8791510022459768077}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!33 &8791510022834776252
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -226,7 +241,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -242,6 +257,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &55179402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8791510022834776240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4deabad2478757f438c4a336a226ad75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respectiveBoundary: {fileID: 8791510023355959552}
 --- !u!1 &8791510023339294745
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,9 +282,10 @@ GameObject:
   - component: {fileID: 8791510023339294757}
   - component: {fileID: 8791510023339294746}
   - component: {fileID: 2064466764}
+  - component: {fileID: 326544135}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Untagged
+  m_TagString: Bounds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -269,8 +298,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8791510023339294745}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 23.727247, y: 1.8521335, z: 0}
-  m_LocalScale: {x: 14.720008, y: 0.29276013, z: 1}
+  m_LocalPosition: {x: 12.783, y: 1.8521, z: 0}
+  m_LocalScale: {x: 14.720008, y: 0.15003957, z: 1}
   m_Children: []
   m_Father: {fileID: 8791510022459768077}
   m_RootOrder: 3
@@ -330,7 +359,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.000000009080395, y: -0.0000076293945}
@@ -346,6 +375,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0000004, y: 1.0000002}
   m_EdgeRadius: 0
+--- !u!114 &326544135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8791510023339294745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4deabad2478757f438c4a336a226ad75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respectiveBoundary: {fileID: 8791510022355332709}
 --- !u!1 &8791510023355959553
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,9 +400,10 @@ GameObject:
   - component: {fileID: 8791510023355959565}
   - component: {fileID: 8791510023355959554}
   - component: {fileID: 1170471917}
+  - component: {fileID: 498898625}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Bounds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -434,7 +477,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -450,3 +493,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &498898625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8791510023355959553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4deabad2478757f438c4a336a226ad75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respectiveBoundary: {fileID: 8791510022834776243}

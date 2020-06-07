@@ -49,7 +49,6 @@ MonoBehaviour:
   - {fileID: 21300006, guid: c6bc2c8a3dea0ba40a649ed75960885a, type: 3}
   - {fileID: 21300002, guid: c6bc2c8a3dea0ba40a649ed75960885a, type: 3}
   - {fileID: 21300004, guid: c6bc2c8a3dea0ba40a649ed75960885a, type: 3}
-  destoryAsteroid: {fileID: 1474601840}
 --- !u!212 &7160695563365268487
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -139,7 +138,8 @@ GameObject:
   - component: {fileID: 7160695565087161875}
   - component: {fileID: 7160695565087161872}
   - component: {fileID: 7225852793705582004}
-  - component: {fileID: 731361097}
+  - component: {fileID: 2042058449}
+  - component: {fileID: 2649465762548529250}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Untagged
@@ -226,7 +226,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c6bc2c8a3dea0ba40a649ed75960885a, type: 3}
   - {fileID: 21300008, guid: c6bc2c8a3dea0ba40a649ed75960885a, type: 3}
   destroyPlayer: {fileID: 7225852793705582004}
-  explosionsController: {fileID: 0}
+  addPoints: {fileID: 2649465762548529250}
+  onAsteroidDestroyed: {fileID: 11400000, guid: b1668ff0ad331bb409699fe830cb9805,
+    type: 2}
 --- !u!50 &7160695565087161875
 Rigidbody2D:
   serializedVersion: 4
@@ -290,7 +292,103 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &731361097
+--- !u!82 &2042058449
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7160695565087161876}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 24eeb2834c7059b4c83faa3a5440e2ea, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &2649465762548529250
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -305,7 +403,7 @@ MonoBehaviour:
   OnCollectEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 073adba16c613104e8371b85fb25a094, type: 2}
+      - m_Target: {fileID: 11400000, guid: 9d7c67a8d6fea154d90bec6a0191abb7, type: 2}
         m_MethodName: Raise
         m_Mode: 1
         m_Arguments:

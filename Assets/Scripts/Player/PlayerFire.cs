@@ -3,17 +3,17 @@ using UnityEngine;
 
 public class PlayerFire : MonoBehaviour
 {
-#pragma warning disable 0649
-    [SerializeField]
-    private GameObject bulletPrefab;
-#pragma warning restore 0649
     private Camera cam;
-    //float cooldownTimer = 0f;
     private Vector2 cursorInWorldPos;
     private Vector2 direction;
     private PoolingManager poolingManager;
     private string projectilesPoolTag = "PlayerProjectile";
     private GameObject newProjectile;
+
+    [SerializeField]
+    private AudioSource src = null;
+    [SerializeField]
+    private SimpleAudioEvent shootingSound = null;
 
     private WaitUntil awaitInput = new WaitUntil(() => Input.GetMouseButton(0));
     private WaitForSeconds awaitEndOfInterval = new WaitForSeconds(CONST_VALUES.FIRING_INTERVAL);
@@ -44,6 +44,7 @@ public class PlayerFire : MonoBehaviour
         direction.Normalize();
         newProjectile = poolingManager.SpawnFromPool(projectilesPoolTag, transform.position, Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg));
         newProjectile.GetComponent<Rigidbody2D>().velocity = direction * CONST_VALUES.PROJECTILE_SPEED;
+        shootingSound.Play(src);
     }
 
 

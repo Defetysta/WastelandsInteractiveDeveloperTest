@@ -2,8 +2,11 @@
 
 public class PlayerMovemement : MonoBehaviour
 {
+    private const int VOLUME_DIVIDER = 15;
     private string horzAxis = "Horizontal";
     private string vertAxis = "Vertical";
+    [SerializeField]
+    private AudioSource engineLoudness = null;
     private float currentRotationZ;
     private Quaternion currentRotation;
     private Vector3 desiredPosition;
@@ -18,6 +21,17 @@ public class PlayerMovemement : MonoBehaviour
     {
         RotatePlayer();
         MovePlayer();
+        ChangeEngineLoudness();
+    }
+
+    private void ChangeEngineLoudness()
+    {
+        engineLoudness.volume = GetRelativeSpeed();
+    }
+
+    internal float GetRelativeSpeed()
+    {
+        return Mathf.Abs(Input.GetAxis(vertAxis) * CONST_VALUES.MAX_VELOCITY_FORWARD) / VOLUME_DIVIDER;
     }
 
     private void MovePlayer()
