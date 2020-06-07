@@ -404,7 +404,7 @@ MonoBehaviour:
   OnCollectEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 9d7c67a8d6fea154d90bec6a0191abb7, type: 2}
+      - m_Target: {fileID: 11400000, guid: fea1d7e4f5fdcbb4fb2a498eb950608a, type: 2}
         m_MethodName: Raise
         m_Mode: 1
         m_Arguments:
