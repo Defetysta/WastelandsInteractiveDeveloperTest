@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: OnPlayerDestroyed
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: e3ceebbdef36a12409d528250a736c5f, type: 3}
+  - {fileID: 8300000, guid: 836c3d14f2c7b2045a320ff438205b9d, type: 3}
   volume:
+    minValue: 0.8
+    maxValue: 0.8
+  pitch:
     minValue: 1
     maxValue: 1
-  pitch:
-    minValue: 0.9
-    maxValue: 1.1

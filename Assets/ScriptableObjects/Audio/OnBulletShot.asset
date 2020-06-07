@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: OnBulletShot
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: e20f802cfa4137647b78ed452f84f7dc, type: 3}
+  - {fileID: 8300000, guid: 7fd8d44910cdfdc4f9876598382c2fdb, type: 3}
   volume:
-    minValue: 0.8
-    maxValue: 1
+    minValue: 0.6
+    maxValue: 0.8
   pitch:
     minValue: 0.9
     maxValue: 1.1

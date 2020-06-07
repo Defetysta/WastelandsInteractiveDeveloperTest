@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OnAsteroidDestroyed
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: 24eeb2834c7059b4c83faa3a5440e2ea, type: 3}
+  - {fileID: 8300000, guid: 18450bfacaf4aa647bc4edd7a1ea4c39, type: 3}
   volume:
     minValue: 0.9
     maxValue: 1.1
