@@ -12,6 +12,8 @@ public class AsteroidController : MonoBehaviour
     private GameEventRaiser addPoints = null;
     [SerializeField]
     private SimpleAudioEvent onAsteroidDestroyed = null;
+    [SerializeField]
+    private IntVariable asteroidsCount = null;
     internal ExplosionsController explosionsController;
     private Camera cam;
     private Rigidbody2D rb;
@@ -29,7 +31,7 @@ public class AsteroidController : MonoBehaviour
 
     private void OnEnable()
     {
-        AsteroidsManager.enabledAsteroidsCount++;
+        asteroidsCount.ApplyChange(1);
         coll.enabled = true;
         rend.sprite = asteroidSprites[0];
         DetermineInitialProperties();
@@ -62,7 +64,7 @@ public class AsteroidController : MonoBehaviour
 
     private void OnDisable()
     {
-        AsteroidsManager.enabledAsteroidsCount--;
+        asteroidsCount.ApplyChange(-1);
     }
     private IEnumerator DelayDisablingAsteroid()
     {

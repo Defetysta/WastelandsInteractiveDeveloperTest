@@ -229,6 +229,7 @@ MonoBehaviour:
   addPoints: {fileID: 2649465762548529250}
   onAsteroidDestroyed: {fileID: 11400000, guid: b1668ff0ad331bb409699fe830cb9805,
     type: 2}
+  asteroidsCount: {fileID: 11400000, guid: d9546d4ad68618f4cb46a7dbc6e1f9cf, type: 2}
 --- !u!50 &7160695565087161875
 Rigidbody2D:
   serializedVersion: 4
@@ -302,7 +303,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 24eeb2834c7059b4c83faa3a5440e2ea, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 18450bfacaf4aa647bc4edd7a1ea4c39, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

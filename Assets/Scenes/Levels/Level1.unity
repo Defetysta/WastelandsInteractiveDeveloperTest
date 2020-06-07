@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 262608584}
   - component: {fileID: 262608583}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,7 +146,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 26, y: -34}
+  m_AnchoredPosition: {x: 26, y: -20}
   m_SizeDelta: {x: 200, y: 40}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &262608583
@@ -297,8 +297,9 @@ GameObject:
   - component: {fileID: 1655800095}
   - component: {fileID: 1655800094}
   - component: {fileID: 1655800093}
+  - component: {fileID: 1655800097}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UICanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -384,6 +385,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!225 &1655800097
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655800092}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &2086095898
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,6 +463,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1725500456130397663
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7160695565087161873, guid: 090cce36b79eb244a911375e025b84d0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160695565087161873, guid: 090cce36b79eb244a911375e025b84d0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160695565087161873, guid: 090cce36b79eb244a911375e025b84d0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160695565087161873, guid: 090cce36b79eb244a911375e025b84d0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160695565087161873, guid: 090cce36b79eb244a911375e025b84d0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160695565087161873, guid: 090cce36b79eb244a911375e025b84d0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160695565087161873, guid: 090cce36b79eb244a911375e025b84d0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160695565087161873, guid: 090cce36b79eb244a911375e025b84d0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160695565087161873, guid: 090cce36b79eb244a911375e025b84d0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160695565087161873, guid: 090cce36b79eb244a911375e025b84d0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160695565087161873, guid: 090cce36b79eb244a911375e025b84d0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160695565087161876, guid: 090cce36b79eb244a911375e025b84d0,
+        type: 3}
+      propertyPath: m_Name
+      value: Asteroid
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 090cce36b79eb244a911375e025b84d0, type: 3}
 --- !u!1001 &5286553207803577645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -704,11 +786,6 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 262608583}
-    - target: {fileID: 5993467065746009182, guid: a77e6c6b88aa14d41a19abde6775aedb,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 89035c818284752489a3b9e29a960c3c, type: 3}
     - target: {fileID: 7114815380156909155, guid: a77e6c6b88aa14d41a19abde6775aedb,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -272,6 +272,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7114815380156909155}
     m_Modifications:
+    - target: {fileID: 6961793082591755889, guid: b4e893e146e643843b7e5072412f94b1,
+        type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DisableSpawningObjects
+      objectReference: {fileID: 0}
     - target: {fileID: 6961793082591755890, guid: b4e893e146e643843b7e5072412f94b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -327,6 +332,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6961793082591755891, guid: b4e893e146e643843b7e5072412f94b1,
+        type: 3}
+      propertyPath: desiredActiveObjects
+      value: 
+      objectReference: {fileID: 11400000, guid: 846c58611e2c43f4e924e7c138dbba3f,
+        type: 2}
+    - target: {fileID: 6961793082591755891, guid: b4e893e146e643843b7e5072412f94b1,
+        type: 3}
+      propertyPath: interval
+      value: 
+      objectReference: {fileID: 11400000, guid: e7f1969701c04dc468b2310cb84d3670,
+        type: 2}
+    - target: {fileID: 6961793082591755891, guid: b4e893e146e643843b7e5072412f94b1,
+        type: 3}
+      propertyPath: desiredTag
+      value: Asteroids
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961793082591755891, guid: b4e893e146e643843b7e5072412f94b1,
+        type: 3}
+      propertyPath: enabledAsteroidsCount
+      value: 
+      objectReference: {fileID: 11400000, guid: d9546d4ad68618f4cb46a7dbc6e1f9cf,
+        type: 2}
     - target: {fileID: 6961793082591755900, guid: b4e893e146e643843b7e5072412f94b1,
         type: 3}
       propertyPath: m_Name
