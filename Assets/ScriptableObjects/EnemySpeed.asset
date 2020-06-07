@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24939b21b7697f84e823fde86124e40a, type: 3}
-  m_Name: EnemySpeed
+  m_Name: enemySpeed
   m_EditorClassIdentifier: 
-  Value: 5
-  ResetOnStart: 1
+  Value: 1.5
+  ResetOnStart: 0

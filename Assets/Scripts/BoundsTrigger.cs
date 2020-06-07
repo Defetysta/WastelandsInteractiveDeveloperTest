@@ -6,7 +6,7 @@ public class BoundsTrigger : MonoBehaviour
     private Transform respectiveBoundary = null;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag(CONST_VALUES.BULLET_TAG))
+        if (collision.CompareTag(CONST_VALUES.BULLET_TAG) || collision.CompareTag(CONST_VALUES.ENEMY_TAG))
         {
             collision.gameObject.SetActive(false);
         }
@@ -14,6 +14,7 @@ public class BoundsTrigger : MonoBehaviour
         {
             TeleportPlayer(collision.gameObject);
         }
+
     }
 
     private void TeleportPlayer(GameObject target)

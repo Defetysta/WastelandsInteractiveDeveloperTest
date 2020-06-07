@@ -9,8 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 221e0595dd8654a4094594ee77b79593, type: 3}
-  m_Name: desiredAsteroids
+  m_Script: {fileID: 11500000, guid: 4ced9a4481ae2034cacf75b4212cbcc2, type: 3}
+  m_Name: OnEnemyShoot
   m_EditorClassIdentifier: 
-  Value: 12
-  ResetOnStart: 0
+  clips:
+  - {fileID: 8300000, guid: d45a457e0e8810a4393f8f69afbcaeba, type: 3}
+  volume:
+    minValue: 1
+    maxValue: 1
+  pitch:
+    minValue: 0.9
+    maxValue: 1.1

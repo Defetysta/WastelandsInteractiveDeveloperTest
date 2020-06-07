@@ -3,6 +3,8 @@
     internal const string PLAYER_TAG = "Player";
     internal const string BOUNDS_TAG = "Bounds";
     internal const string BULLET_TAG = "Bullet";
+    internal const string ENEMY_TAG = "Enemy";
+    internal const string ENEMY_BULLET_TAG = "EnemyBullet";
     internal const string GAME_OVER_SCENE_NAME = "Game Over";
 
 
@@ -13,4 +15,5 @@
     internal const float ASTEROID_MIN_SPEED = 4f;
     internal const float ASTEROID_MAX_SPEED = 7f;
     internal const float ENEMY_SPEED_MULTIPLIER = 2f;
+
 }

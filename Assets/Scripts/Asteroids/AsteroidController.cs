@@ -7,32 +7,21 @@ public class AsteroidController : MonoBehaviour
     [SerializeField]
     private Sprite[] asteroidSprites = null;
     [SerializeField]
-    private GameEventRaiser destroyPlayer = null;
-    [SerializeField]
-    private GameEventRaiser addPoints = null;
-    [SerializeField]
-    private SimpleAudioEvent onAsteroidDestroyed = null;
-    [SerializeField]
     private IntVariable asteroidsCount = null;
-    internal ExplosionsController explosionsController;
     private Camera cam;
     private Rigidbody2D rb;
-    private Collider2D coll;
-    private AudioSource src;
+    internal ExplosionsController explosionsController;
     private void Awake()
     {
-        src = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         rend = GetComponent<SpriteRenderer>();
-        explosionsController = GetComponentInChildren<ExplosionsController>();
         cam = FindObjectOfType<CameraShake>().GetComponent<Camera>();
-        coll = GetComponent<Collider2D>();
+        explosionsController = GetComponentInChildren<ExplosionsController>();
     }
 
     private void OnEnable()
     {
         asteroidsCount.ApplyChange(1);
-        coll.enabled = true;
         rend.sprite = asteroidSprites[0];
         DetermineInitialProperties();
         StartCoroutine(DelayDisablingAsteroid());
@@ -71,21 +60,9 @@ public class AsteroidController : MonoBehaviour
         yield return new WaitForSeconds(5);
         gameObject.SetActive(false);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    internal void GotHit()
     {
-        if (collision.CompareTag(CONST_VALUES.PLAYER_TAG))
-        {
-            StartCoroutine(StartChangingSprites());
-            onAsteroidDestroyed.Play(src);
-            destroyPlayer.RaiseEvent();
-        }
-        if (collision.CompareTag(CONST_VALUES.BULLET_TAG))
-        {
-            addPoints.RaiseEvent();
-            onAsteroidDestroyed.Play(src);
-            StartCoroutine(StartChangingSprites());
-            coll.enabled = false;
-        }
+        StartCoroutine(StartChangingSprites());
     }
     private IEnumerator StartChangingSprites()
     {

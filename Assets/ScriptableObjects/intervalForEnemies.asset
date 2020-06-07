@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 221e0595dd8654a4094594ee77b79593, type: 3}
-  m_Name: desiredAsteroids
+  m_Script: {fileID: 11500000, guid: 24939b21b7697f84e823fde86124e40a, type: 3}
+  m_Name: intervalForEnemies
   m_EditorClassIdentifier: 
-  Value: 12
+  Value: 10
   ResetOnStart: 0
